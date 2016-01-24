@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6902163B65CF7542F6CB21B1 /* Pods_MoviePlaza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A5BF3908C11A2856C898A2 /* Pods_MoviePlaza.framework */; };
+		E571089C1C4B524D005CB020 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571089B1C4B524D005CB020 /* Reachability.swift */; };
+		E571089E1C4C2F3F005CB020 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571089D1C4C2F3F005CB020 /* DetailViewController.swift */; };
 		E59157BC1C430B210040F3B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59157BB1C430B210040F3B8 /* AppDelegate.swift */; };
-		E59157BE1C430B210040F3B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59157BD1C430B210040F3B8 /* ViewController.swift */; };
 		E59157C11C430B210040F3B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59157BF1C430B210040F3B8 /* Main.storyboard */; };
 		E59157C31C430B210040F3B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59157C21C430B210040F3B8 /* Assets.xcassets */; };
 		E59157C61C430B210040F3B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E59157C41C430B210040F3B8 /* LaunchScreen.storyboard */; };
 		E59157D11C430B220040F3B8 /* MoviePlazaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59157D01C430B220040F3B8 /* MoviePlazaTests.swift */; };
 		E59157DC1C430B220040F3B8 /* MoviePlazaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59157DB1C430B220040F3B8 /* MoviePlazaUITests.swift */; };
+		E59157EA1C430C2C0040F3B8 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59157E91C430C2C0040F3B8 /* MoviesViewController.swift */; };
+		E59157EC1C430D850040F3B8 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59157EB1C430D850040F3B8 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7565F72AE81C41ACDF97C4A8 /* Pods-MoviePlaza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviePlaza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoviePlaza/Pods-MoviePlaza.debug.xcconfig"; sourceTree = "<group>"; };
+		89499B0A4CB5A68AE36575B3 /* Pods-MoviePlaza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviePlaza.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoviePlaza/Pods-MoviePlaza.release.xcconfig"; sourceTree = "<group>"; };
+		E571089B1C4B524D005CB020 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		E571089D1C4C2F3F005CB020 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E59157B81C430B210040F3B8 /* MoviePlaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviePlaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59157BB1C430B210040F3B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E59157BD1C430B210040F3B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E59157C01C430B210040F3B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E59157C21C430B210040F3B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E59157C51C430B210040F3B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,9 @@
 		E59157D71C430B220040F3B8 /* MoviePlazaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviePlazaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59157DB1C430B220040F3B8 /* MoviePlazaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePlazaUITests.swift; sourceTree = "<group>"; };
 		E59157DD1C430B220040F3B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E59157E91C430C2C0040F3B8 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		E59157EB1C430D850040F3B8 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		F1A5BF3908C11A2856C898A2 /* Pods_MoviePlaza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviePlaza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6902163B65CF7542F6CB21B1 /* Pods_MoviePlaza.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82E9C93275BD8FFBEDC7FE34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1A5BF3908C11A2856C898A2 /* Pods_MoviePlaza.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0DFB2DE9BC55D179063F09C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7565F72AE81C41ACDF97C4A8 /* Pods-MoviePlaza.debug.xcconfig */,
+				89499B0A4CB5A68AE36575B3 /* Pods-MoviePlaza.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E59157AF1C430B210040F3B8 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,8 @@
 				E59157CF1C430B220040F3B8 /* MoviePlazaTests */,
 				E59157DA1C430B220040F3B8 /* MoviePlazaUITests */,
 				E59157B91C430B210040F3B8 /* Products */,
+				B0DFB2DE9BC55D179063F09C /* Pods */,
+				82E9C93275BD8FFBEDC7FE34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				E59157BB1C430B210040F3B8 /* AppDelegate.swift */,
-				E59157BD1C430B210040F3B8 /* ViewController.swift */,
+				E59157E91C430C2C0040F3B8 /* MoviesViewController.swift */,
+				E59157EB1C430D850040F3B8 /* MovieCell.swift */,
+				E571089B1C4B524D005CB020 /* Reachability.swift */,
+				E571089D1C4C2F3F005CB020 /* DetailViewController.swift */,
 				E59157BF1C430B210040F3B8 /* Main.storyboard */,
 				E59157C21C430B210040F3B8 /* Assets.xcassets */,
 				E59157C41C430B210040F3B8 /* LaunchScreen.storyboard */,
@@ -132,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E59157E01C430B220040F3B8 /* Build configuration list for PBXNativeTarget "MoviePlaza" */;
 			buildPhases = (
+				9B8D71A7EEDA67FA04DC7ED9 /* Check Pods Manifest.lock */,
 				E59157B41C430B210040F3B8 /* Sources */,
 				E59157B51C430B210040F3B8 /* Frameworks */,
 				E59157B61C430B210040F3B8 /* Resources */,
+				7A3A956BAF65252F6C830B9D /* Embed Pods Frameworks */,
+				5205033832B47AA18B54C3B4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,13 +287,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5205033832B47AA18B54C3B4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoviePlaza/Pods-MoviePlaza-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A3A956BAF65252F6C830B9D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoviePlaza/Pods-MoviePlaza-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B8D71A7EEDA67FA04DC7ED9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E59157B41C430B210040F3B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E59157BE1C430B210040F3B8 /* ViewController.swift in Sources */,
 				E59157BC1C430B210040F3B8 /* AppDelegate.swift in Sources */,
+				E59157EA1C430C2C0040F3B8 /* MoviesViewController.swift in Sources */,
+				E571089E1C4C2F3F005CB020 /* DetailViewController.swift in Sources */,
+				E571089C1C4B524D005CB020 /* Reachability.swift in Sources */,
+				E59157EC1C430D850040F3B8 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +482,7 @@
 		};
 		E59157E11C430B220040F3B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7565F72AE81C41ACDF97C4A8 /* Pods-MoviePlaza.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MoviePlaza/Info.plist;
@@ -406,6 +494,7 @@
 		};
 		E59157E21C430B220040F3B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89499B0A4CB5A68AE36575B3 /* Pods-MoviePlaza.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MoviePlaza/Info.plist;
@@ -482,6 +571,7 @@
 				E59157E21C430B220040F3B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E59157E31C430B220040F3B8 /* Build configuration list for PBXNativeTarget "MoviePlazaTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +580,7 @@
 				E59157E51C430B220040F3B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E59157E61C430B220040F3B8 /* Build configuration list for PBXNativeTarget "MoviePlazaUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +589,7 @@
 				E59157E81C430B220040F3B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
