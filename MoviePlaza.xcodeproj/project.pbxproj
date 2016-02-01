@@ -18,6 +18,7 @@
 		E59157DC1C430B220040F3B8 /* MoviePlazaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59157DB1C430B220040F3B8 /* MoviePlazaUITests.swift */; };
 		E59157EA1C430C2C0040F3B8 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59157E91C430C2C0040F3B8 /* MoviesViewController.swift */; };
 		E59157EC1C430D850040F3B8 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59157EB1C430D850040F3B8 /* MovieCell.swift */; };
+		E5F12D721C5EC225007AB66D /* InfiniteScrollViewActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F12D711C5EC225007AB66D /* InfiniteScrollViewActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		E59157DD1C430B220040F3B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E59157E91C430C2C0040F3B8 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		E59157EB1C430D850040F3B8 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		E5F12D711C5EC225007AB66D /* InfiniteScrollViewActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewActivityView.swift; sourceTree = "<group>"; };
 		F1A5BF3908C11A2856C898A2 /* Pods_MoviePlaza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviePlaza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				E59157BB1C430B210040F3B8 /* AppDelegate.swift */,
 				E59157E91C430C2C0040F3B8 /* MoviesViewController.swift */,
 				E59157EB1C430D850040F3B8 /* MovieCell.swift */,
+				E5F12D711C5EC225007AB66D /* InfiniteScrollViewActivityView.swift */,
 				E571089B1C4B524D005CB020 /* Reachability.swift */,
 				E571089D1C4C2F3F005CB020 /* DetailViewController.swift */,
 				E59157BF1C430B210040F3B8 /* Main.storyboard */,
@@ -345,6 +348,7 @@
 				E571089E1C4C2F3F005CB020 /* DetailViewController.swift in Sources */,
 				E571089C1C4B524D005CB020 /* Reachability.swift in Sources */,
 				E59157EC1C430D850040F3B8 /* MovieCell.swift in Sources */,
+				E5F12D721C5EC225007AB66D /* InfiniteScrollViewActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

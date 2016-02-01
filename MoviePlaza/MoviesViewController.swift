@@ -12,7 +12,7 @@ import PKHUD
 import Foundation
 import SystemConfiguration
 
-class MoviesViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UISearchBarDelegate {
+class MoviesViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UISearchBarDelegate,UIScrollViewDelegate {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     var movies: [NSDictionary]?
@@ -25,20 +25,23 @@ class MoviesViewController: UIViewController,UICollectionViewDataSource,UICollec
     
     @IBOutlet weak var networkFailureLabel: UILabel!
    
+    @IBOutlet weak var scrollView: UIScrollView!
+    var endpoint: String!
     
+     var isMoreDataLoading = false
+     var loadingMoreView:InfiniteScrollViewActivityView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigation bar decoration
-        self.title = "Movie Plaza"
-        
-        
+       // self.title = "Movie Plaza"
         
         moviesCollectionView.dataSource = self
         moviesCollectionView.delegate = self
+        self.navigationItem.title = "Movie Plaza"
         // Do any additional setup after loading the view.
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let url = NSURL(string:"https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
         let request = NSURLRequest(URL: url!)
         let session = NSURLSession(
             configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
@@ -73,6 +76,16 @@ class MoviesViewController: UIViewController,UICollectionViewDataSource,UICollec
         self.view.bringSubviewToFront(networkFailureLabel)
         checkNetwork()
         
+        // Set up Infinite Scroll loading indicator
+        let frame = CGRectMake(0, moviesCollectionView.contentSize.height, moviesCollectionView.bounds.size.width, InfiniteScrollViewActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollViewActivityView(frame: frame)
+        loadingMoreView!.hidden = true
+        moviesCollectionView.addSubview(loadingMoreView!)
+        
+        var insets = moviesCollectionView.contentInset;
+        insets.bottom += InfiniteScrollViewActivityView.defaultHeight;
+        moviesCollectionView.contentInset = insets
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -84,6 +97,7 @@ class MoviesViewController: UIViewController,UICollectionViewDataSource,UICollec
             PKHUD.sharedHUD.contentView = PKHUDSuccessView()
             PKHUD.sharedHUD.hide(afterDelay: 2.0)
         }
+        
     }
 
 
@@ -106,13 +120,13 @@ class MoviesViewController: UIViewController,UICollectionViewDataSource,UICollec
         let cell = moviesCollectionView.dequeueReusableCellWithReuseIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
         let movie = filteredData![indexPath.row]
         let title = movie["title"] as! String
-       // let overview = movie["overview"] as! String
         //image url
         let baseUrl = "https://image.tmdb.org/t/p/w342"
         let posterUrl = movie["poster_path"] as! String
         let imageUrl = NSURL(string:baseUrl + posterUrl)
         cell.titleButton.setTitle(title, forState: .Normal)
         getPoster(imageUrl!, cell:cell)
+        print(indexPath.row)
         return cell
 
     
@@ -155,6 +169,60 @@ class MoviesViewController: UIViewController,UICollectionViewDataSource,UICollec
             self.refreshControl.endRefreshing()
         })
     }
+    
+    func loadMoreData() {
+        
+        // ... Create the NSURLRequest (myRequest) ...
+        let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+        let url = NSURL(string:"https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
+        let myRequest = NSURLRequest(URL: url!)
+        
+        // Configure session so that completion handler is executed on main UI thread
+        let session = NSURLSession(
+            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+            delegate:nil,
+            delegateQueue:NSOperationQueue.mainQueue()
+        )
+        let task : NSURLSessionDataTask = session.dataTaskWithRequest(myRequest,
+            completionHandler: { (dataOrNil, response, error) in
+                self.isMoreDataLoading = false
+                self.loadingMoreView!.stopAnimating()
+                if let data = dataOrNil {
+                    
+                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
+                        data, options:[]) as? NSDictionary {
+                            NSLog("response: \(responseDictionary)")
+                            self.movies = responseDictionary["results"] as? [NSDictionary]
+                            self.filteredData = self.movies //????
+                            self.moviesCollectionView.reloadData()
+                    }
+                }
+        });
+        task.resume()
+    }
+
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        // Handle scroll behavior here
+        if (!isMoreDataLoading) {
+            // Calculate the position of one screen length before the bottom of the results
+            let scrollViewContentHeight = moviesCollectionView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - moviesCollectionView.bounds.size.height
+            
+            // When the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && moviesCollectionView.dragging) {
+                isMoreDataLoading = true
+                
+                // Update position of loadingMoreView, and start loading indicator
+                let frame = CGRectMake(0,moviesCollectionView.contentSize.height, moviesCollectionView.bounds.size.width, InfiniteScrollViewActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+                
+                // Code to load more results
+                loadMoreData()		
+            }
+        }
+    }
+   
      //func for search
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         filteredData = searchText.isEmpty ? movies: movies!.filter({(movie:NSDictionary)->Bool in
@@ -213,6 +281,8 @@ class MoviesViewController: UIViewController,UICollectionViewDataSource,UICollec
         }
         
     }
+    
+
 
 
     /*

@@ -17,6 +17,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var releaseDate: UILabel!
     
     @IBOutlet weak var movieOverview: UILabel!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var infoView: UIView!
+    
     var movie: NSDictionary?
     override func viewDidLoad(){
          super.viewDidLoad()
@@ -24,6 +29,8 @@ class DetailViewController: UIViewController {
     }
     
     func setUp(){
+        //scrollView
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: infoView.frame.origin.y+infoView.frame.size.height)
         //set view title
         self.title = movie!["title"] as? String
         //set image
